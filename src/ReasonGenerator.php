@@ -14,13 +14,22 @@ class ReasonGenerator
     private const accusativePronouns = ['me', 'all', 'her', 'him'];
     private const nounedVerbs = ['love', 'approval'];
     private const adverbs = ['very', 'not very', 'not excessively'];
-    private const adjectives = ['tall', 'bald', 'young', 'smart', 'rich', 'terrified', 'good'];
+    private const adjectives = ['tall', 'tattooed', 'young', 'smart', 'rich', 'terrified', 'lazy', 'good'];
     private const articles = ['the', 'some', 'a'];
     private const prepositions = ['to', 'from', 'with', 'at', 'on', 'in', 'behind', 'under'];
-    private const properNouns = ['Tobias', 'Jack', 'Jane', 'Lynn', 'Pauline', 'Loren', 'Sara', 'Michelle', 'Nicolas', 'Annette', 'Taylor', 'Fabien'];
+    private const properNouns = ['Tobias', 'Jack', 'Jane', 'Lynn', 'Pauline', 'Miguel', 'Sara', 'Michelle', 'Nicolas', 'Annette', 'Taylor', 'Fabien'];
     private const presentVerbs = ['fool', 'please', 'satisfy'];
-    private const transitiveVerbs = ['threatened', 'told', 'asked', 'helped', 'obeyed'];
-    private const intransitiveVerbs = ['insisted on it', 'suggested it', 'told me to', 'wanted it', 'knew it was a good idea', 'wanted it that way'];
+    private const transitiveVerbs = ['threatened', 'told', 'asked', 'helped', 'obeyed', 'tricked'];
+    private const intransitiveVerbs = [
+        'insisted on it',
+        'suggested it',
+        'told me to',
+        'wanted it',
+        'knew it was a good idea',
+        'wanted it that way',
+        'really really begged for it',
+        'closed their eyes and wished for it'
+    ];
     private const specialCases = [
         'why not?',
         'don\'t ask!',
@@ -111,14 +120,13 @@ class ReasonGenerator
 
     private function adjectivePhrase(): string
     {
-        switch (rand(1, 6)) {
+        switch (rand(1, 5)) {
             case 1:
             case 2:
             case 3:
               return $this->rand(self::adjectives);
             case 4:
-            case 5:
-                return $this->rand(self::accusativePronouns).' and '.$this->rand(self::accusativePronouns);
+                return $this->adjectivePhrase().' and '.$this->adjectivePhrase();
             default:
                 return $this->rand(self::adverbs).' '.$this->rand(self::adjectives);
         }
