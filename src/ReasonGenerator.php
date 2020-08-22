@@ -9,19 +9,20 @@ namespace Nyholm\Why;
  */
 class ReasonGenerator
 {
-    private const nouns = ['mathematician', 'programmer', 'product manager', 'engineer', 'web developer', 'hamster', 'kid', 'backend developer'];
+    private const nouns = ['programmer', 'product manager', 'engineer', 'web developer', 'hamster', 'kid', 'backend developer'];
     private const nominativePronouns = ['I', 'you', 'he', 'she', 'they'];
     private const accusativePronouns = ['me', 'all', 'her', 'him'];
     private const nounedVerbs = ['love', 'approval'];
-    private const adverbs = ['very', 'not very', 'not excessively'];
-    private const adjectives = ['tall', 'tattooed', 'young', 'smart', 'rich', 'terrified', 'lazy', 'good'];
+    private const adverbs = ['very', 'not very', 'not excessively', 'really'];
+    private const adjectives = ['tall', 'tattooed', 'young', 'smart', 'rich', 'terrified', 'lazy', 'good', 'helpful'];
     private const articles = ['the', 'some', 'a'];
     private const prepositions = ['to', 'from', 'with', 'at', 'on', 'in', 'behind', 'under'];
-    private const properNouns = ['Tobias', 'Jack', 'Jane', 'Lynn', 'Pauline', 'Miguel', 'Sara', 'Michelle', 'Nicolas', 'Annette', 'Taylor', 'Fabien'];
+    private const properNouns = ['Tobias', 'Mark', 'Jane', 'Lynn', 'Pauline', 'Miguel', 'Sara', 'Michelle', 'Nicolas', 'Mr. Anderson', 'Taylor', 'Fabien'];
     private const presentVerbs = ['fool', 'please', 'satisfy'];
     private const transitiveVerbs = ['threatened', 'told', 'asked', 'helped', 'obeyed', 'tricked'];
     private const intransitiveVerbs = [
         'insisted on it',
+        'insisted on it... and we got cake after',
         'suggested it',
         'told me to',
         'wanted it',
@@ -29,6 +30,7 @@ class ReasonGenerator
         'wanted it that way',
         'really really begged for it',
         'closed their eyes and wished for it',
+        'thought they would like it',
     ];
     private const specialCases = [
         'why not?',
@@ -43,6 +45,8 @@ class ReasonGenerator
         'the customer is always right.',
         'in the beginning, God created the heavens and the earth...',
         'don\'t you have something better to do?',
+        'it is more fun this way',
+        'because computer science isn\'t always easy',
     ];
 
     public function generate(): string
