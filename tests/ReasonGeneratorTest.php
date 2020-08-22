@@ -12,7 +12,7 @@ class ReasonGeneratorTest extends TestCase
     public function testGenerate()
     {
         $generator = new ReasonGenerator();
-        for ($i = 0; $i<10000; $i++) {
+        for ($i = 0; $i < 10000; ++$i) {
             $text = $generator->generate();
             $this->assertNotEmpty($text);
         }
