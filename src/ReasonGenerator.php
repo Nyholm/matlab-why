@@ -38,8 +38,7 @@ class ReasonGenerator
 
     public function generate(): string
     {
-        $rand = rand(1, 10);
-        switch ($rand) {
+        switch (rand(1, 10)) {
             case 1:
               $output = $this->rand(self::specialCases);
 
@@ -59,83 +58,77 @@ class ReasonGenerator
 
     private function phrase(): string
     {
-        $rand = rand(1, 3);
-        switch ($rand) {
+        switch (rand(1, 3)) {
             case 1:
-              return 'for the ' . $this->rand(self::nounedVerbs) . ' ' . $this->prepositionalPhrase() . '.';
+              return 'for the '.$this->rand(self::nounedVerbs).' '.$this->prepositionalPhrase().'.';
             case 2:
-              return 'to ' . $this->rand(self::presentVerbs) . ' ' . $this->object() . '.';
-            case 3:
-              return 'because ' . $this->sentence();
+              return 'to '.$this->rand(self::presentVerbs).' '.$this->object().'.';
+            default:
+              return 'because '.$this->sentence();
         }
     }
 
     private function prepositionalPhrase(): string
     {
-        $rand = rand(1, 3);
-        switch ($rand) {
+        switch (rand(1, 3)) {
             case 1:
-              return $this->rand(self::prepositions) . ' ' . $this->rand(self::articles) . ' ' . $this->nounPhrase();
+              return $this->rand(self::prepositions).' '.$this->rand(self::articles).' '.$this->nounPhrase();
             case 2:
-              return $this->rand(self::prepositions) . ' ' . $this->rand(self::properNouns);
-            case 3:
-              return $this->rand(self::prepositions) . ' ' . $this->rand(self::accusativePronouns);
+              return $this->rand(self::prepositions).' '.$this->rand(self::properNouns);
+            default:
+              return $this->rand(self::prepositions).' '.$this->rand(self::accusativePronouns);
         }
     }
 
     private function sentence(): string
     {
-        return $this->subject() . ' ' . $this->predicate() . '.';
+        return $this->subject().' '.$this->predicate().'.';
     }
 
     private function subject(): string
     {
-        $rand = rand(1, 4);
-        switch ($rand) {
+        switch (rand(1, 4)) {
             case 1:
               return $this->rand(self::properNouns);
             case 2:
                 return $this->rand(self::nominativePronouns);
             default:
-              return $this->rand(self::articles) . ' ' . $this->nounPhrase();
+              return $this->rand(self::articles).' '.$this->nounPhrase();
         }
     }
 
     private function nounPhrase(): string
     {
-        $rand = rand(1, 4);
-        switch ($rand) {
+        switch (rand(1, 4)) {
             case 1:
               return $this->rand(self::nouns);
             case 2:
-                return $this->adjectivePhrase() . ' ' . $this->nounPhrase();
+                return $this->adjectivePhrase().' '.$this->nounPhrase();
             default:
-                return $this->adjectivePhrase() . ' ' . $this->rand(self::nouns);
+                return $this->adjectivePhrase().' '.$this->rand(self::nouns);
         }
     }
 
     private function adjectivePhrase(): string
     {
-        $rand = rand(1, 6);
-        switch ($rand) {
+        switch (rand(1, 6)) {
             case 1:
             case 2:
             case 3:
               return $this->rand(self::adjectives);
             case 4:
             case 5:
-                return $this->rand(self::accusativePronouns) . ' and ' . $this->rand(self::accusativePronouns);
-            case 6:
-                return $this->rand(self::adverbs) . ' ' . $this->rand(self::adjectives);
+                return $this->rand(self::accusativePronouns).' and '.$this->rand(self::accusativePronouns);
+            default:
+                return $this->rand(self::adverbs).' '.$this->rand(self::adjectives);
         }
     }
 
     private function predicate(): string
     {
-        $rand = rand(1, 3);
-        switch ($rand) {
+        switch (rand(1, 3)) {
             case 1:
-                return $this->rand(self::transitiveVerbs) . ' ' . $this->object();
+                return $this->rand(self::transitiveVerbs).' '.$this->object();
             default:
                 return $this->rand(self::intransitiveVerbs);
         }
@@ -143,12 +136,11 @@ class ReasonGenerator
 
     private function object(): string
     {
-        $rand = rand(1, 10);
-        switch ($rand) {
+        switch (rand(1, 10)) {
             case 1:
                 return $this->rand(self::accusativePronouns);
             default:
-                return $this->rand(self::articles) . ' ' . $this->nounPhrase();
+                return $this->rand(self::articles).' '.$this->nounPhrase();
         }
     }
 
