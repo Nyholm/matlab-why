@@ -1,0 +1,31 @@
+{
+    "name": "nyholm/why",
+    "type": "library",
+    "description": "A port of Matlab Why function",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Nyholm",
+            "email": "tobias.nyholm@gmail.com"
+        }
+    ],
+    "require": {
+        "php": "^7.3 || ^8.0"
+    },
+    "require-dev": {
+        "symfony/phpunit-bridge": "^4.4 || ^5.0"
+    },
+    "config": {
+        "sort-packages": true
+    },
+    "autoload": {
+        "psr-4": {
+            "Nyholm\\Why\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Tests\\Nyholm\\Why\\": "tests/"
+        }
+    }
+}
