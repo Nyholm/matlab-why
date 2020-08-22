@@ -1,7 +1,7 @@
 {
     "name": "nyholm/why",
     "type": "library",
-    "description": "A port of Matlab Why function",
+    "description": "A port of Matlab's Why function",
     "license": "MIT",
     "authors": [
         {
