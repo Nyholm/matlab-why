@@ -1,7 +1,7 @@
-# Matlab Why in PHP
+# Matlab's Why function in PHP
 
-Matlab has a easter egg where you type `why` and you get a fun answer. This project
-is highly inspired by the Matlab function.
+Matlab has an easter egg where you type `why` and you get a fun answer. This project
+is highly inspired by that Matlab function.
 
 ![The matlab definition](/docs/matlab.png)
 
