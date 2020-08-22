@@ -28,7 +28,7 @@ class ReasonGenerator
         'knew it was a good idea',
         'wanted it that way',
         'really really begged for it',
-        'closed their eyes and wished for it'
+        'closed their eyes and wished for it',
     ];
     private const specialCases = [
         'why not?',
